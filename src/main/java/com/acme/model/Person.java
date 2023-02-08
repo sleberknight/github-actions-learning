@@ -1,0 +1,21 @@
+package com.acme.model;
+
+import lombok.Builder;
+import lombok.NonNull;
+import lombok.Value;
+
+import java.time.LocalDate;
+
+@Value
+@Builder
+public class Person {
+
+    @NonNull
+    String firstName;
+
+    @NonNull
+    String lastName;
+
+    @NonNull
+    LocalDate dateOfBirth;
+}
