@@ -21,6 +21,5 @@ jobs:
         uses: sleberknight/delombok-action@main
         
       - name: Print the Delomboked code
-        run:
-          find src-delombok -exec cat {} \;
-          shell: bash
+        run: find src-delombok -exec cat {} \;
+        shell: bash
