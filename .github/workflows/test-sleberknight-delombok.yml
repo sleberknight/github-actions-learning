@@ -7,4 +7,4 @@ jobs:
   Run-Delombok:
     runs-on: ubuntu-latest
     steps:
-      - uses: sleberknight/delombok@main
+      - uses: sleberknight/delombok-action@main
