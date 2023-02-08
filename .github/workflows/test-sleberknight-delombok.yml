@@ -7,4 +7,7 @@ jobs:
   Run-Delombok:
     runs-on: ubuntu-latest
     steps:
-      - uses: sleberknight/delombok-action@main
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Run Delombok
+        uses: sleberknight/delombok-action@main
