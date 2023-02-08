@@ -1,6 +1,12 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+
+# disable the run on push and make it manual
+# on: [push]
+on:
+  workflow_dispatch:
+    # no inputs needed here
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
