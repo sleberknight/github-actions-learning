@@ -1,4 +1,4 @@
-name: learn-github-actions-check-bats
+name: Learn GitHub Actions (install & check bats version)
 run-name: ${{ github.actor }} is learning GitHub Actions (Check BATS version)
 #on: [push]
 on:
