@@ -23,6 +23,8 @@ jobs:
         run: |
           echo "github.workspace: ${{ github.workspace }}"
           ls ${{ github.workspace }}
+      - name: List files in parent directory
+        run: ls ${{ github.workspace }}/..
       - run: echo "🍏 This job's status is ${{ job.status }}."
       
   Another-Job:
