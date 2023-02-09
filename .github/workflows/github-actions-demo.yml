@@ -36,6 +36,7 @@ jobs:
           echo "this is some foo" > /tmp/foo.txt
           echo "contents of /tmp/foo.txt:"
           cat /tmp/foo.txt
-          mktemp --suffix=.jar --tmpdir lombok-XXXXXXXXXX
+          file_name=$(mktemp --suffix=.jar --tmpdir lombok-XXXXXXXXXX)
+          echo "file name created by mktemp is ${file_name}"
           ls /tmp
         shell: bash
