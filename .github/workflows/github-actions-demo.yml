@@ -28,7 +28,7 @@ jobs:
   Another-Job:
     runs-on: ubuntu-latest
     steps:
-      - name: Fund with /tmp
+      - name: Fun with /tmp
         run: |
           echo "listing /tmp dir:"
           ls /tmp
@@ -36,4 +36,6 @@ jobs:
           echo "this is some foo" > /tmp/foo.txt
           echo "contents of /tmp/foo.txt:"
           cat /tmp/foo.txt
+          tmp_file_name=$(mktemp --suffix=.jar --tmpdir lombok-XXXXXXXXXX)
+          ls "/tmp/${tmp_file_name}"
         shell: bash
