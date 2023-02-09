@@ -28,7 +28,8 @@ jobs:
   Another-Job:
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: Fund with /tmp
+        run: |
           echo "listing /tmp dir:"
           ls /tmp
           touch foo.txt
