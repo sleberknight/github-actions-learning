@@ -31,4 +31,8 @@ jobs:
       - run: |
           echo "listing /tmp dir:"
           ls /tmp
+          touch foo.txt
+          echo "this is some foo" > /tmp/foo.txt
+          echo "contents of /tmp/foo.txt:"
+          cat /tmp/foo.txt
         shell: bash
