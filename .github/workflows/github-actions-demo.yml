@@ -31,12 +31,12 @@ jobs:
       - name: Fun with /tmp
         run: |
           echo "listing /tmp dir:"
-          ls /tmp
+          ls -al /tmp
           touch foo.txt
           echo "this is some foo" > /tmp/foo.txt
           echo "contents of /tmp/foo.txt:"
           cat /tmp/foo.txt
           file_name=$(mktemp --suffix=.jar --tmpdir lombok-XXXXXXXXXX)
           echo "file name created by mktemp is ${file_name}"
-          ls /tmp
+          ls -al /tmp
         shell: bash
