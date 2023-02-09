@@ -24,3 +24,11 @@ jobs:
           echo "github.workspace: ${{ github.workspace }}"
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      
+  Another-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "listing /tmp dir:"
+          ls /tmp
+        shell: bash
