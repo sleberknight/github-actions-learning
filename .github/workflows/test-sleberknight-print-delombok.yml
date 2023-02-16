@@ -1,4 +1,4 @@
-name: Delombok
+name: Test print-delombok action
 on:
   workflow_dispatch:
     # no inputs needed here
