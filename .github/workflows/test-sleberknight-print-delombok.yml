@@ -4,7 +4,7 @@ on:
     # no inputs needed here
 
 jobs:
-  Run-Delombok:
+  Print-Delomboked-Sources:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -21,4 +21,4 @@ jobs:
         uses: sleberknight/delombok-action@main  # Note: this targets the main branch!
         
       - name: Print the Delomboked code
-        uses: sleberknight/print-delombok@mainn  # Note: this targets the main branch!
+        uses: sleberknight/print-delombok@main  # Note: this targets the main branch!
