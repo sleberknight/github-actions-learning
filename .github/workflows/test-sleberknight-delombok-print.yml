@@ -18,6 +18,6 @@ jobs:
           restore-keys: ${{ runner.os }}-m2        
         
       - name: Run Delombok
-        uses: sleberknight/delombok-action@3-add-print-option  # NOTE: targets PR branch currently!!!
+        uses: sleberknight/delombok-action@main  # Note: this targets the main branch!
         with:
           printDelombokSource: true
