@@ -1,0 +1,24 @@
+name: Delombok
+on:
+  workflow_dispatch:
+    # no inputs needed here
+
+jobs:
+  Run-Delombok:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2        
+        
+      - name: Run Delombok
+        uses: sleberknight/delombok-action@main  # Note: this targets the main branch!
+        
+      - name: Print the Delomboked code
+        uses: sleberknight/print-delombok@mainn  # Note: this targets the main branch!
