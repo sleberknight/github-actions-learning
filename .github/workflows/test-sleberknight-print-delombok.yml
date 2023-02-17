@@ -21,4 +21,4 @@ jobs:
         uses: sleberknight/delombok-action@v0.6.0
         
       - name: Print the Delomboked code
-        uses: sleberknight/print-delombok@main
+        uses: sleberknight/print-delombok@print-file-name-and-line-numbers
