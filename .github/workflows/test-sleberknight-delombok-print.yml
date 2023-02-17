@@ -18,6 +18,6 @@ jobs:
           restore-keys: ${{ runner.os }}-m2        
         
       - name: Run Delombok
-        uses: sleberknight/delombok-action@print-file-name-and-line-numbers
+        uses: sleberknight/delombok-action@v0.7.0
         with:
           printDelombokSource: true
