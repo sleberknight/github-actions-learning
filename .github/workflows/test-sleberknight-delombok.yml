@@ -18,7 +18,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2        
         
       - name: Run Delombok
-        uses: sleberknight/delombok-action@v0.6.0
+        uses: sleberknight/delombok-action@v0.7.0
         with:
           sourcePath: src  # this is the default...just testing
         
