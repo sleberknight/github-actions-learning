@@ -12,4 +12,5 @@ jobs:
       - name: Automatically set milestone to issue
         uses: cgetc/automatically-set-milestone-to-issue@v0.1.3
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           version-prefix: ""
