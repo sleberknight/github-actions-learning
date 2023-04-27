@@ -1,5 +1,6 @@
 name: Test automatically set milestone
 
+# This only assigns on new issues
 on:
   issues:
     types: [opened]
