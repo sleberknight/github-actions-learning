@@ -8,6 +8,16 @@ jobs:
   Set-Milestone:
     runs-on: ubuntu-latest
         
+    # This has several problems that I've identified:
+    # 1. It does not choose the correct version, e.g. it picks 1.5.2 over 2.0.0 and 1.0.0 over 2.0.0!
+    # 2. It should respect an existing milestone (there is an open PR for this, but hasn't been touched since Dec. 2022)
+    # 3. It will assign a milestone to a PR even when that PR is associated with an issue that has a milestone.
+    #    We don't like doing this because then the issue and the PR will both be (double) counted when generating
+    #    release notes. So, we do want a PR created, for example, by dependabot to get a milestone, since there
+    #    isn't an associated issue. But, we do not want to assign a milestone that is associated with an issue, since
+    #    the issue should be associated with a milestone. If the issue does not have a milestone, then I think it's better
+    #    just to skip assigning a milestone (so that if someone fixes the issue by adding a milestone, only the issue
+    #    has one).
     steps:
       - name: Automatically set milestone to issue
         uses: cgetc/automatically-set-milestone-to-issue@v0.1.3
