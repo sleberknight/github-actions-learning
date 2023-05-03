@@ -1,4 +1,4 @@
-name: Test automatically set milestone
+name: Test automatically set milestone to new issues
 
 # This only assigns on new issues
 on:
