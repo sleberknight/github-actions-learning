@@ -1,4 +1,4 @@
-name: Test automatically set milestone
+name: Test automatically set milestone on new PRs
 
 # This only assigns on newly opened PRs
 on:
