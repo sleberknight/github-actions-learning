@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThatNullPointerException;
 
 import org.junit.jupiter.api.Test;
 
-public class UserTest {
+class UserTest {
 
     @Test
     void shouldRequireUsername() {
@@ -24,8 +24,7 @@ public class UserTest {
         var u2 = new User("bob", "monkey-123");
         var u3 = new User("alice", "basura");
 
-        assertThat(u1).isEqualTo(u2);
-        assertThat(u1).isNotEqualTo(u3);
+        assertThat(u1).isEqualTo(u2).isNotEqualTo(u3);
     }
 
     @Test
