@@ -121,6 +121,23 @@ class CaffeineTest {
         await().atMost(FIVE_SECONDS).untilAsserted(() -> assertThat(loadingCache.estimatedSize()).isOne());
     }
 
+    @Test
+    void canRecordStats() {
+        LoadingCache<String, DataObject> loadingCache = Caffeine.newBuilder()
+                .maximumSize(100)
+                .recordStats()
+                .build(k -> DataObject.newInstance("Data for " + k));
+
+        loadingCache.get("A");  // miss
+        loadingCache.get("A");  // hit
+        loadingCache.get("B");  // miss
+        loadingCache.get("A");  // hit
+        loadingCache.get("A");  // hit
+
+        assertThat(loadingCache.stats().hitCount()).isEqualTo(3);
+        assertThat(loadingCache.stats().missCount()).isEqualTo(2);
+    }
+
     @Value
     public static class DataObject {
         String data;
